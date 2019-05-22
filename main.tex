@@ -1,0 +1,131 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{amssymb}
+\usepackage{kpfonts}
+\newcommand*{\vv}[1]{\vec{\mkern0mu#1}}
+
+\title{Vetores e Geometria Analítica - IMD0034\\
+        Ministério da Educação\\
+        Universidade Federal do Rio Grande do Norte\\
+        Instituto Metrópole Digital
+}
+\author{Prof. Felipe Magalhães}
+\date{May 2019}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\large{\textbf{Ementa:}}
+    \begin{enumerate}
+        \item  Vetores no plano e no espaço
+        \item Matrizes e Sistemas
+        \item Inversão de matrizes e determinantes
+        \item Retas e Planos
+        \item Cônicas e superfícies quádricas
+    \end{enumerate}
+\vspace{10pt}
+
+\begin{enumerate}
+    \item \textbf{Vetores no plano e no espaço}\\
+        $Def_1$ (Segmentos Equipolentes). $AB$ e $PQ$ em ${\rm I\!R}^n$ são equipolentes, escreve-se $\overrightarrow{AB} = \overrightarrow{PQ}$, diz-se que $v = \overrightarrow{AB} = \overrightarrow{PQ}$, onde v é vetor. Além disso, $v = \overrightarrow{AB} = \overrightarrow{PQ} = B - A = Q - P $\\ 
+        \\
+        $Obs_1:$ Se $v = \overrightarrow{AB}$ é um vetor e existe $P$ e ${\rm I\!R}^n$. Só há um único Q tal que $v = \overrightarrow{PQ}$. Dessa forma $Q = P + v$.\\
+        \\
+        $Def_2$ (Translação). $T_v: {\rm I\!R}^n \rightarrow {\rm I\!R}^n$; $T_v(P) = P +v$.\\
+        \\
+        $Obs_2$ (Vetor nulo). $v = \overrightarrow{AA} = A - A = 0$ e ${\rm I\!R}^n$.
+        \\
+        $Def_3$ (Soma e produto por escalar). $v = (x_v, y_v, z_v)$, $w = (x_w, y_w, z_w)$ e $\lambda$ e ${\rm I\!R}$. Assim:
+            $$ v + w  = (x_v + x_w, y_v + y_w, z_v + z_w)$$
+            $$ \lambda . v = (\lambda . x_v, \lambda . y_v, \lambda . z_v)$$
+        $Prop_1$.
+        \begin{itemize}
+            \item \hspace{1pt} Se $v = \overrightarrow{AB} \rightarrow{} -v = \overrightarrow{BA}$
+            \item $-v + v = v + (-v)$ é inverso aditivo de v.
+            \item $v + w = w + v$ (comutativa)
+            \item $(u + v) + w = u + (v + w)$ (associativa)
+            \item $x . (v + w) = \alpha v + \alpha w$, $(\alpha + b)v + \alpha v + \beta v$, $\alpha, \beta \in {\rm I\!R}$
+        \end{itemize}
+        $Def_4$. (Produto interno). Seja $v, w \in {\rm I\!R}^n$. $\varphi : {\rm I\!R}^n \rightarrow{} x {\rm I\!R}^n \rightarrow{} {\rm I\!R}; <v,w> = <w,v>, <u + v, w> = <u,w> + <v,w> e <\lambda v,w> = \lambda . <v,w>, u \in {\rm I\!R}^n, \lambda \in {\rm I\!R}$.\\
+        \\
+        $Def_5$ (Produto escalar). Caso particular, produto interno canônico. $v = (x_v, y_v, z_v), u = (x_u, y_u, z_u).$ Assim:
+        $$ u.v = x_u . x_v + y_u . y_v + z_u . z_v$$
+        $Def_6$ (Norma). Também dito comprimento de v é dado por:
+        $$ |v| = \sqrt{x_2^v + y_2^v + z_2^v} $$
+        
+        $Def_7$ (Produto escalar 2). $u,v \in {\rm I\!R}^n; \theta = ang(u,v)$. Dessa forma:
+        $$ u.v = |u|.|v|.cos\theta, u \neq 0, v \neq 0 $$
+        $Ex_1$. Sabendo que $v = (4,2,-1)$. Determine $T_v(P); P(3,2,-1)$.\\
+        \\
+        $Ex_2$. Dados $R(2,-1,3)$ e $S(3,4,6)$. Determine o vetor unitário na direção de $v = \overrightarrow{RS}$\\
+        \\
+        $Ex_3$. Prove que $A(4,9,1)$, $B(-2,6,3)$ e $C(6,3,-2)$ são vértices  de um triângulo retângulo.\\
+        \\
+        $Ex_4$. Dados $v = (6,-3,2)$ e $u = (2,1,-3)$. Determine a componente de u na direção de v e o vetor projeção de u sobre v.\\
+        \\
+        $Ex_5$. Ache a distância de $P(4,1,6)$ à reta que passa por $A(8,3,2)$ e $B(2,-3,5)$.\\
+        \\
+        $Def_8$ (Produto vetorial). $u, v \in \Pi$. Assim, $ u \wedge v$ é dado por: $$ u \wedge v = det(e, u, v), $$
+        onde $e = (i,j,k)$.\\
+        \\
+        $Prop_2$. $u \wedge v = -(v \wedge u); (u + v) \wedge w = u \wedge w + v \wedge w; (\alpha . u) \wedge v = u \wedge (\alpha v) = \alpha . (u \wedge v); u \wedge v \perp \alpha . u$ e $ u \wedge v \perp \beta v, \alpha, \beta \in  {\rm I\!R}; u \wedge v = 0$ sse $\exists r;$ $u,v \in r; \{ u,v, u \wedge v \}$ é positiva sua orientação; $|u \wedge v| = área[u,v]$. \\
+        \\
+        $Def_9$ (Produto misto). É dado por $(u \wedge v).w = det(u, v, w)$.\\
+    
+    \item \textbf{Retas e planos}\\
+        $Def_{10}$ (Equação da reta). Dados $p \in r$ e $v$ o vetor direção de $r$. Sua equação é dada por: $$ r(t)= p + v.t, t \in {\rm I\!R}$$.
+        $Ex_6$ (Posições entre retas). Dados $r$ e $s$. Assim:
+        \begin{itemize}
+            \item Se  $r \cap s = \emptyset$ e $\exists k;$ $v_r. k = v_s \Rightarrow r//s$
+            \item Se  $r \cap s = \emptyset$ e $\forall  k;$ $v_r. k \neq v_s \Rightarrow r$ e $s$ são reversas
+            \item Se  $r \cap s \neq \emptyset$ e $\exists  k;$ $v_r. k = v_s \Rightarrow r = s$
+            \item Se  $r \cap s \neq \emptyset$ e $\forall  k;$ $v_r. k = v_s \Rightarrow r X s$.
+        \end{itemize}
+        $Def_{11}$ (Equação do plano). Seja $(P_0 \in \Pi$ e $u \perp \Pi$. Assim para $X(x, y, z)$: $$ \Pi = (X - P_0).n = 0$$
+        $Ex_7$ (Posições entre planos). Dados $\Pi _1$ e $\Pi _2$. Tem-se:
+        \begin{itemize}
+            \item Se $n \neq k.n_2$, $\forall k \Rightarrow \Pi _1 \cap \Pi _2 = r$
+            
+            \item Se $n_1 = k.n_2$, para algum $k$ e $d_1 = k.d-2 \Rightarrow \Pi _1$ $//$ $\Pi _2, \Pi _1 = \Pi _2$
+            
+            \item Se $n_1 = k.n_2$, para algum $k$ e $d_1 \neq k.d-2 \Rightarrow \Pi _1 // \Pi _2$
+        \end{itemize}
+        
+        $Def_{12}$ (Ângulos entre retas). Dados $r $ e $s$. Assim, o ângulo entre elas é dado por: $$ ang(r,s) = cos\theta . \frac{v_r . v-s}{|v_s| . |v_r|}$$
+        
+        $Def_{13}$ (Ângulos entre planos). Dados $\Pi _1$ e $\Pi _2$ planos. Assim o ângulo entre eles é dado por: $$ ang(\Pi _1, \Pi _2)= cos\theta .  \frac{n_1 . n_2}{|n_1| . |n_2|} $$
+        
+        $Def_{14}$ (Distância de ponto a reta). Sejam a reta $r$ e o ponto $p$ $\nexists$ $r$, considere $w = P - Q, Q \in r$ e $v$ o vetor direção da reta $r$. Assim, a distância é dada por: $$ d(P,r) = \frac{1}{|v|} . (|v|^2 . w^2 - (v - w)^2)^{\frac{1}{2}} $$
+        
+        $Def_{15}$ (Distância de ponto a plano). Dados $P$ $\nexists$ $\Pi$. Assim a distância de $P$ a $\Pi$ é dada por: $$ d(P, \Pi) = \frac{|(P - Q) . n|}{|n|}, Q \in \Pi $$
+        
+        $Ex_6$. Ache duas maneiras de determinar a equação de plano que passa por: $P(1,3,2)$, $Q(3,-2,2)$ e $R(2,1,3)$.\\ \vspace{1pt}
+        
+        $Ex_7$. Determine o ângulo entre os planos $\Pi _1: 5x -2y + 5z -12 = 0$ e $\Pi _2 2x + y -7z + 11 = 0$\\
+        \\
+        $Ex_8$. Ache a equação do plano $\Pi;$ $A(4,0,-2) \in \Pi$, $\Pi \perp \Pi _1$ e $\Pi \perp \Pi _2$. $\Pi _1: x - y + z = 0$, $\Pi _2: 2x + y - 4z - 5 = 0$.\\
+        \\
+        $Ex_9$. Determine a distância entre $(1,4,6)$ e $2x - y + 2z + 10 = 0$.\\
+        \\
+        $Ex_{10}$. Ache a equação da reta que passa por $A(-3,2,4)$ e $B(6,1,2)$.\\
+        \\
+        $Ex_{11}$. Ache a reta que é intersecção de $x + 3y - z - 9 = 0$ e $2x - 3y + 4z + 3 = 0$\\
+        \\
+        $Ex_{12}$. Ache a reta que passa por $(1,-1,1)$ perpendicular a reta $s$: $3x = 2y = z$ e é paralela ao plano $\Pi: x + y - z = 0$\\
+        \\
+        $Ex_{13}$. Determine a posição entre as retas $r$; $A(1,2,7)$, $B(-2,3,-4) \in  r$ e $C(2,-1,4)$, $D(5,7,-3) \in s$.\\
+        \\
+        $Ex_{14}$. Ache a equação do plano que contém $(4,0,-2)$ e é perpendicular a $x - y + z = 0$ e $2x + y - 4z - 5 = 0$.\\
+        \\
+        $Ex_{15}$. Ache o volume do paraleleípedo de vértices $P(5,4,5)$, $Q(4,10,6)$, $R(1,8,7)$ e $(2,6,9)$.\\
+        \\
+        $Ex_{16}$. Determine a distância entre as retas do exemplo 13.
+        
+                    
+\end{enumerate}
+\end{document}
